@@ -1,0 +1,10 @@
+1495415702037	Rename type 'Scheduling'
+1495416736340	Encapsulate field 'arrivalTime'
+1495416744168	Encapsulate field 'resources'
+1495417501323	Encapsulate field 'time'
+1495417542605	Encapsulate field 'size'
+1495660241583	Rename type 'Core'
+1495661982979	Change method 'admit'
+1495894428864	Delete element
+1495895656492	Delete element
+1495897080347	Delete element

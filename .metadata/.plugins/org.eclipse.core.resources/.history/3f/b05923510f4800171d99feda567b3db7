@@ -1,0 +1,41 @@
+package com.system;
+
+public class CPU{
+	private Process executing;
+	private int coreId;
+	int quantumCounter;
+	
+	public CPU (int coreId) {
+		this.coreId = coreId;
+	}
+	
+	public int getCoreId(){
+		return this.coreId;
+	}
+	
+	public boolean empty (){
+		return executing == null;
+	}
+	
+	public Process getExecuting (){
+		return executing;
+	}
+
+	public String toString (){
+		return "CPU" + this.coreId;
+	}
+	
+	public void execute()  {
+		if (executing != null){
+			executing.setTimeLeft(executing.getTimeLeft() - 1);
+			
+			if (executing.getTimeLeft() <= 0){
+				executing = null;
+			}
+		}
+	}
+	
+	public void setExecuting (Process process){
+		this.executing = process;
+	}
+}

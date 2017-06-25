@@ -1,0 +1,19 @@
+#version 330
+
+smooth in vec4 theColor;
+
+out vec4 outputColor;
+
+
+//light parameters
+uniform vec3 lightPos;
+uniform vec3 ambientColor; 
+uniform vec3 diffuseColor;
+uniform vec3 speclarColor;
+uniform float kA, kD, kS, sN;
+
+
+void main()
+{
+    outputColor = theColor;
+}

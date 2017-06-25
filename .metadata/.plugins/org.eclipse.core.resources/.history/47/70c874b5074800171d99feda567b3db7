@@ -1,0 +1,43 @@
+package com.system;
+
+public class CPU{
+	private Process executing;
+	private int coreId;
+	int quantumCounter;
+	
+	public CPU (int coreId) {
+		this.coreId = coreId;
+	}
+
+	public void execute(Process process)  {
+		// TODO checar se é preemptivo para FCFS
+		
+		
+		
+		if (process != null){
+			if (process.getPriority() == 0){ 
+				//fcfs case
+				// don't let process out, it has to end at this cpu with no interruptions
+				executing = process;
+			}
+			if (process.getTimeLeft() > 0) {
+				process.setTimeLeft(process.getTimeLeft() - 1);
+			}else {
+				executing = null;
+			}
+		}
+	}
+	
+	public boolean empty (){
+		return executing == null;
+	}
+	
+	public Process getExecuting (){
+		return executing;
+	}
+
+	public String toString (){
+		return "CPU" + this.coreId;
+	}
+	
+}
